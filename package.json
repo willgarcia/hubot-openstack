@@ -1,6 +1,6 @@
 {
   "name": "hubot-openstack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "willgarcia <garcia.rodriguez.william@gmail.com>",
   "description": "Perform Openstack actions to provision and work with VMs, images or flavors.",
   "repository": {

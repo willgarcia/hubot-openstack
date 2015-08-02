@@ -1,0 +1,29 @@
+{
+  "name": "hubot-openstack",
+  "version": "0.1.0",
+  "author": "willgarcia <garcia.rodriguez.william@gmail.com>",
+  "description": "Perform Openstack actions to provision and work with VMs, images or flavors.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/willgarcia/hubot-openstack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/willgarcia/hubot-openstack/issues"
+  },
+  "homepage": "https://github.com/willgarcia/hubot-openstack",
+  "licence": "MIT",
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "openstack"
+  ],
+  "dependencies": {
+    "moment": "^2.10.6",
+    "pkgcloud": "^1.1.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "0.10.x"
+  }
+}

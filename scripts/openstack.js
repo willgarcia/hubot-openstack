@@ -119,7 +119,33 @@ module.exports = function(robot) {
         });
     });
 
-    robot.respond(/openstack-compute servers/i, function(msg) {
+    robot.respond(/openstack-compute servers (.+)/i, function(msg) {
+        if (!computeValidate(msg)) {
+            return;
+        }
+
+        regexp_pattern = msg.match[1]
+        regexp = new RegExp(regexp_pattern, "gi")
+
+        computeClient().getServers(function(err, data) {
+            if (err) {
+                msg.reply(err);
+                return;
+            }
+
+            var servers = '';
+            data.forEach(function(server) {
+                if (server.name.match(regexp)) {
+                    console.log(server);
+                    servers += '• ' + computeServerInfo(server);
+                }
+            });
+            msg.reply(servers);
+
+        });
+    });
+
+    robot.respond(/openstack-compute servers$/i, function(msg) {
         if (!computeValidate(msg)) {
             return;
         }

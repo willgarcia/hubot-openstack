@@ -76,6 +76,7 @@ var
         return server.name +
             ' / ' + server.addresses.private +
             ': ' + server.status +
+            ', id: ' + server.id +
             ', key_pair: ' + server.openstack.key_name +
             ', tenant: ' + server.openstack.tenant_id +
             ',  ' + moment(server.created).fromNow() + '\n';

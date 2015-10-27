@@ -125,8 +125,8 @@ module.exports = function(robot) {
             return;
         }
 
-        regexp_pattern = msg.match[1]
-        regexp = new RegExp(regexp_pattern, "gi")
+        var regexp_pattern = msg.match[1];
+        var regexp = new RegExp(regexp_pattern, "gi");
 
         computeClient().getServers(function(err, data) {
             if (err) {

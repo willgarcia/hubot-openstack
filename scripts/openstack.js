@@ -7,6 +7,7 @@
 //   hubot openstack-compute servers - Print a list of all servers.
 //   hubot openstack-compute server <id> - Show details about the given server.
 //   hubot openstack-compute server-create <server-name> <flavor-name> <image-name> <keyname> - Creates a server with the options specified.
+//   hubot openstack-compute server-delete <id> - Deletes a server with specified id or name.
 //   hubot openstack-compute images - Print a list of available images to boot from.
 //   hubot openstack-compute image <id> - Show details about the given image.
 //
@@ -233,6 +234,19 @@ module.exports = function(robot) {
                 return;
             }
             msg.reply(computeServerInfo(server));
+        });
+    });
+
+    robot.respond(/openstack-compute server-delete (.+)/i, function(msg) {
+        if (!computeValidate(msg)) {
+            return;
+        }
+        computeClient().destroyServer(msg.match[1], function(err, serverId) {
+            if (err) {
+                msg.reply(err);
+                return;
+            }
+            msg.reply('Server ' + serverId.ok + '  Deleted');
         });
     });
 

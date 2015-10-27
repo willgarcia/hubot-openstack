@@ -38,3 +38,4 @@ Include package in Hubot's `external-scripts.json`:
     hubot openstack-compute servers             # Print a list of all servers.
     hubot openstack-compute server <id>         # Show details about the given server.
     hubot openstack-compute server-create <server-name> <flavor-name> <image-name> <keyname> # Creates a server with the options specified.
+    hubot openstack-compute server-delete <id>  # Deletes a server with specified id or name.

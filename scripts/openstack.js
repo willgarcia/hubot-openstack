@@ -162,6 +162,12 @@ module.exports = function(robot) {
                 console.log(server);
                 servers += '• ' + computeServerInfo(server);
             });
+
+            if (!servers.length) {
+              msg.reply('No provisioned servers');
+              return;
+            }
+            
             msg.reply(servers);
 
         });
